@@ -1,0 +1,55 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+.more-info-box{display: none;}
+
+.navbar-brand{
+  color: #333!important;
+  font-size: 13px;
+}
+
+body{
+  background-image: linear-gradient(#fafafa, #fff);
+  background-repeat: repeat-x;
+}
+
+.stamp{
+  transform: scale(1.2, 1.2) rotate(30deg);
+  color: var(--stamp-color);
+  border: 2px solid var(--stamp-color);
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 28px;
+  text-align: center;
+  &.paid{
+    --stamp-color: var(--green);
+  }
+  &.waiting{
+    --stamp-color: var(--orange);
+  }
+  &.outdated{
+    --stamp-color: var(--red);
+  }
+}
+
+.form-control[readonly]{
+  background-color: white;
+}
+
+.progress-bar{
+  margin: 0 auto;
+}
+
+#qr{
+  font-size: 12px;
+  text-align: center;
+  img{
+    border-radius: 8px;
+  }
+}
