@@ -13,7 +13,8 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+Route::get('/generate', function (Request $request) {
+    var_dump(env('DEROPAY_API_SECRET'));
+    die();
 });
 

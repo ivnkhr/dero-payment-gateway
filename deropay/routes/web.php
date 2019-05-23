@@ -16,7 +16,8 @@ Route::get('/', function () {
 });
 
 Route::get('/payment', function () {
-    $data['invoice'] = new Object();
-    $data['invoice']->status = 0;
-    return view('payment',$data);
+    //$data['invoice'] = new Object();
+    //$data['invoice']->status = 0;
+    $data = array();
+    return view('payment', $data);
 });
