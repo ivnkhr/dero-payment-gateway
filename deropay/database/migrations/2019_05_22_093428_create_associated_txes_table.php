@@ -14,8 +14,23 @@ class CreateAssociatedTxesTable extends Migration
     public function up()
     {
         Schema::create('associated_txes', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->timestamps();
+          
+          $table->engine = 'MyISAM';
+          $table->charset = 'utf8';
+          $table->collation = 'utf8_unicode_ci';
+        
+          $table->bigIncrements('id');
+
+          $table->nullableTimestamps();
+
+          $table->string('tx', 64)->collation('ascii_general_ci')->nullable()->unique();
+          $table->unsignedMediumInteger('height')->nullable();
+          $table->unsignedMediumInteger('wallet_height')->nullable();
+          $table->unsignedBigInteger('invoice_id')->nullable();
+          $table->unsignedBigInteger('amount')->default(0);
+          
+          $table->index(['height', 'created_at']);
+          
         });
     }
 

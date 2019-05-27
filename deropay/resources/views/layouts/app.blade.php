@@ -18,8 +18,8 @@
           <span class="navbar-brand mb-0">
             DeroPay &copy {{ date('Y') }}
           </span>
-          @if( env('DEROPAY_LIVE_SUPPORT_URL') )
-            <a href="{{ env('DEROPAY_LIVE_SUPPORT_URL') }}" target="_blank">Live Support</a>
+          @if( config('deropay.supporturl') )
+            <a href="{{ config('deropay.supporturl') }}" target="_blank">Live Support</a>
           @endif
         </nav>
 

@@ -34,7 +34,7 @@
   --breakpoint-md: 768px;
   --breakpoint-lg: 992px;
   --breakpoint-xl: 1200px;
-  --font-family-sans-serif: "Nunito", sans-serif;
+  --font-family-sans-serif: "Arial", sans-serif;
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
@@ -66,7 +66,7 @@ section {
 
 body {
   margin: 0;
-  font-family: "Nunito", sans-serif;
+  font-family: "Arial", sans-serif;
   font-size: 0.9rem;
   font-weight: 400;
   line-height: 1.6;
@@ -6148,7 +6148,7 @@ a.close.disabled {
   z-index: 1070;
   display: block;
   margin: 0;
-  font-family: "Nunito", sans-serif;
+  font-family: "Arial", sans-serif;
   font-style: normal;
   font-weight: 400;
   line-height: 1.6;
@@ -6273,7 +6273,7 @@ a.close.disabled {
   z-index: 1060;
   display: block;
   max-width: 276px;
-  font-family: "Nunito", sans-serif;
+  font-family: "Arial", sans-serif;
   font-style: normal;
   font-weight: 400;
   line-height: 1.6;
@@ -10676,7 +10676,8 @@ body {
   background-repeat: repeat-x;
 }
 
-.stamp {
+.stamp,
+.substamp {
   -webkit-transform: scale(1.2, 1.2) rotate(30deg);
           transform: scale(1.2, 1.2) rotate(30deg);
   color: var(--stamp-color);
@@ -10685,26 +10686,84 @@ body {
   font-weight: bold;
   font-size: 28px;
   text-align: center;
+  line-height: 38px;
+  z-index: 9999;
+  position: relative;
 }
 
-.stamp.paid {
+.stamp.paid,
+.substamp.paid {
   --stamp-color: var(--green);
 }
 
-.stamp.waiting {
+.stamp.waiting,
+.substamp.waiting {
   --stamp-color: var(--orange);
 }
 
-.stamp.outdated {
+.stamp.outdated,
+.substamp.outdated {
   --stamp-color: var(--red);
+}
+
+.substamp {
+  font-size: 18px;
+  border-width: 0px;
+  -webkit-transform: scale(1, 1) rotate(0deg);
+          transform: scale(1, 1) rotate(0deg);
+}
+
+@media (max-width: 1199.98px) {
+  .stamp {
+    width: 100%;
+    font-size: 18px;
+    -webkit-transform: scale(1, 1) rotate(25deg);
+            transform: scale(1, 1) rotate(25deg);
+  }
 }
 
 .form-control[readonly] {
   background-color: white;
 }
 
+.tx-box {
+  padding-top: 10px;
+  font-size: 12px;
+  color: #222;
+}
+
+.tx-box thead {
+  font-size: 10px;
+  color: #666;
+}
+
+.tx-box table {
+  width: 100%;
+}
+
+.tx-box td {
+  text-align: center;
+  width: 33.3%;
+}
+
+.tx-box tfoot {
+  border-top: 1px solid #ccc;
+  color: #666;
+}
+
 .progress-bar {
+  text-align: center;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-weight: bold;
+  font-size: 14px;
+  text-shadow: 0px 0px 5px #3490dc;
+  font-family: Arial;
   margin: 0 auto;
+}
+
+.lead {
+  overflow: hidden;
 }
 
 #qr {

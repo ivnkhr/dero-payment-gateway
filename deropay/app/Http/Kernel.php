@@ -40,7 +40,6 @@ class Kernel extends HttpKernel
         'api' => [
             'throttle:60,1',
             'bindings',
-            'api.secret'
         ],
     ];
 
@@ -62,6 +61,7 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'api.secret' => \App\Http\Middleware\ValidApiSecret::class,
+        'api.ip' => \App\Http\Middleware\ValidApiAllowedIP::class,
     ];
 
     /**

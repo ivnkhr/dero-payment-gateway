@@ -37,7 +37,7 @@ class GenerateApiSecret extends Command
      */
     public function handle()
     {
-        $value = hash('sha256', time().env('APP_KEY'));
+        $value = hash('sha256', time().config('app.key'));
         $key = "DEROPAY_API_SECRET";
         
         $value = preg_replace('/\s+/', '', $value); //replace special ch

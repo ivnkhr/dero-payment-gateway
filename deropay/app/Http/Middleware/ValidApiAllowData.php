@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Illuminate\Foundation\Application;
 use Closure;
 
-class ValidApiSecret
+class ValidApiAllowData
 {
     /**
      * Handle an incoming request.
@@ -16,8 +16,9 @@ class ValidApiSecret
      */
     public function handle($request, Closure $next)
     {
-        if( ($request->header('Api-Secret') != config('deropay.secret')) || strlen(config('deropay.secret')) == 0 ){
-            return response()->json(['error' => 'Unauthorized secret'], 401);
+        if(config('deropay.apiaccess.data') != true){
+            //abort(405, 'Endpoint disabled.');
+            return response()->json(['error' => 'Data endpoint disabled'], 401);
         }
         return $next($request);
     }
