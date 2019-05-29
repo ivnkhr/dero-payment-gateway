@@ -3,6 +3,15 @@
 
 This is community driven project so donations are highly appreciated: dERodvQrEpaHgZQSSB6LKdMdLA7kZVpvXGZmVE62Efcpbp9HerMmhUNLWZGxs9W4xtUNHr9iwM9cuHiqzjCrxN8W35ZsThuANs
 
+Features:
+1. Invoice issuing
+2. Convinient user interface
+3. Rich data api
+4. Automated coldstorage withdrawals
+5. Webhook data communication
+6. Invoices can be paid in multiple txs
+7. and more to come...
+
 This project consists of 3 major parts:
 1. Payment Gateway Backend (issuing invoices, verifying payments)
 2. User Interface (paying invoice, tracking down payment)
