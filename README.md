@@ -1,10 +1,12 @@
 # DeroPay
 ### Dero Payment Gateway a.k.a DeroPay
 
-This is community driven project so donations are highly appreciated: dERodvQrEpaHgZQSSB6LKdMdLA7kZVpvXGZmVE62Efcpbp9HerMmhUNLWZGxs9W4xtUNHr9iwM9cuHiqzjCrxN8W35ZsThuANs
+This is community driven project so donations are highly appreciated: **dERodvQrEpaHgZQSSB6LKdMdLA7kZVpvXGZmVE62Efcpbp9HerMmhUNLWZGxs9W4xtUNHr9iwM9cuHiqzjCrxN8W35ZsThuANs**
+
+
 Or use demo implementation here and donate via website: https://deropay.plrs.pro/
 
-Project Supporters:
+**Project Supporters:**
 will be here soon...
 
 Features:
