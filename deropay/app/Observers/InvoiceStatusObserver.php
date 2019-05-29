@@ -48,7 +48,8 @@ class InvoiceStatusObserver
                 curl_setopt($ch, CURLOPT_FRESH_CONNECT, true);
                 curl_setopt($ch, CURLOPT_POST, 1);
                 curl_setopt($ch, CURLOPT_POSTFIELDS, $query_data);
-                curl_setopt($ch, CURLOPT_TIMEOUT_MS, 1);
+                curl_setopt($ch, CURLOPT_TIMEOUT_MS, 1000); // The number of milliseconds to wait while trying to connect. Use 0 to wait indefinitely. If libcurl is built to use the standard system name resolver, that portion of the connect will still use full-second resolution for timeouts with a minimum timeout allowed of one second.
+				        curl_setopt($ch, CURLOPT_NOSIGNAL, 1);
                 curl_setopt($ch, CURLOPT_RETURNTRANSFER, false);
                 
                 if(config('app.debug')==true) Log::info('Request data sent to '.config('deropay.webhookurl').': '.print_r($post_data,true));
