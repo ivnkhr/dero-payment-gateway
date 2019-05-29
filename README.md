@@ -64,10 +64,15 @@ APP_URL=http://localhost
 *Required mySQL (or any laravel compatible DB) configuration*
 
 DB_CONNECTION=mysql
+
 DB_HOST=127.0.0.1
+
 DB_PORT=3306
+
 DB_DATABASE=homestead
+
 DB_USERNAME=homestead
+
 DB_PASSWORD=secret
 
 *DeroPay Config*
@@ -114,6 +119,7 @@ DEROPAY_LIVE_SUPPORT_URL=
 ### Api Endpoints
 
 In order to access any api endpoint you need to provide secret in headers and have endpoint enbaled in config
+
 Add `Api-Secret: <DEROPAY_API_SECRET>` header to your requests
 
 ##### Invoice Api 
@@ -250,10 +256,12 @@ Will send POST data in folowing format (this is from exaple project):
 ```
 
 Where invoice_signature is {{invoice_id.<your app secret>}}
+
 you can find usage example in `example/webhook.php`
 
   
 ### Running example:
 
 Create supporters.txt file with write permissions
+
 rename config.php.example => config.php and put your secret and deropay api link
