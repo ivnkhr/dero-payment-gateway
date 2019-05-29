@@ -17,15 +17,25 @@ https://laravel.com/docs/5.8/installation
 ### Project Setup:
 
 1. Server Requirments is:
+
 	PHP >= 7.1.3
+	
 	MySQL (or any laravel compatible DB)
+	
 	BCMath PHP Extension
+	
 	Ctype PHP Extension
+	
 	JSON PHP Extension
+	
 	Mbstring PHP Extension
+	
 	OpenSSL PHP Extension
+	
 	PDO PHP Extension
+	
 	Tokenizer PHP Extension
+	
 	XML PHP Extension
 
 2. Pull project from git or unzip it
@@ -33,17 +43,23 @@ https://laravel.com/docs/5.8/installation
 3. Perform Configuration and Web Server Configuration instructions from here: https://laravel.com/docs/5.8/installation#web-server-configuration
 
 4. In project directory run commands `php artisan app:apisecret`
+
 This will create your API key for issuing invoices and accessing its data
 
 5. Perform Starting The Scheduler instructions from here: https://laravel.com/docs/5.8/scheduling#introduction
+
 It will automate hot wallet withdrawals and invoice checking
 
 6. Rename .env.example => .env and modify values accordingly
 
-7. Cache your config (https://laravel.com/docs/5.8/configuration#configuration-caching) by running: `php artisan config:cache`
+7. Cache your config (https://laravel.com/docs/5.8/configuration#configuration-caching) by running:
+
+`php artisan config:cache`
 
 8. Install and run your local dero hot wallet: 
+
 start dero-wallet-cli-windows-386.exe --wallet-file test1.wallet --rpc-server --rpc-bind=127.0.0.1:30307 --daemon-address=https://derowallet.io:443
+
 be sure to include --rpc-server, so DeroPay will be able to reach your wallet
 
 9. Enjoy !
