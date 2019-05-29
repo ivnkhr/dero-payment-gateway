@@ -5,7 +5,7 @@ require('config.php');
 $data = array(
     'name' => 'TIP',
     'desc' => @$_GET['val'] . ' DERO',
-	'ttl' => 60,
+	'ttl' => 1200,
 	'price' => (int) @$_GET['val'] * 1000000000000,
 	'webhook_data' => [
 		'customer_nick' => @$_GET['nick'],
