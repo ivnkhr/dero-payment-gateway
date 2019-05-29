@@ -52,9 +52,14 @@ be sure to include --rpc-server, so DeroPay will be able to reach your wallet
 
 *Laravel Config*
 
-APP_ENV=local // local - for local env and prod - for production server
-APP_DEBUG=true // set false if your runing it on production, true will provide additional data in logs and display
-APP_URL=http://localhost // enter entrypoint url that is accessible from web for your deropay instance
+APP_ENV=local
+// local - for local env and prod - for production server
+
+APP_DEBUG=true
+// set false if your runing it on production, true will provide additional data in logs and display
+
+APP_URL=http://localhost
+// enter entrypoint url that is accessible from web for your deropay instance
 
 *Required mySQL (or any laravel compatible DB) configuration*
 
