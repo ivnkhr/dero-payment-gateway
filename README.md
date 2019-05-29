@@ -17,7 +17,7 @@ This project consists of 3 major parts:
 2. User Interface (paying invoice, tracking down payment)
 3. Example, wraps Payment Gateway api and uses its User Interface
 
-check it live at: http://deropay.plrs.pro/
+check it live at: https://deropay.plrs.pro/
 
 ### Payment Gateway Backend and User Interface
 
