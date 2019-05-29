@@ -278,6 +278,6 @@ you can find usage example in `example/webhook.php`
   
 ### Running example:
 
-Create supporters.txt file with write permissions
+Create `supporters.txt` file with write permissions
 
-rename config.php.example => config.php and put your secret and deropay api link
+rename `config.php.example => config.php` and put your secret and deropay api link
