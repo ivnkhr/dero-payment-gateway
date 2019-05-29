@@ -51,6 +51,8 @@ https://laravel.com/docs/5.8/installation
 
 2. Pull project from git or unzip it
 
+run `composer install` to install vendor packages
+
 3. Perform Configuration and Web Server Configuration instructions from here: https://laravel.com/docs/5.8/installation#web-server-configuration
 
 4. In project directory run commands `php artisan app:apisecret`
@@ -73,7 +75,9 @@ start dero-wallet-cli-windows-386.exe --wallet-file test1.wallet --rpc-server --
 
 be sure to include --rpc-server, so DeroPay will be able to reach your wallet
 
-9. Enjoy !
+9. run `php artisan migrate` to setup database default tables
+
+10. Enjoy !
 
 ### Configuring your DeroPay (.env):
 
