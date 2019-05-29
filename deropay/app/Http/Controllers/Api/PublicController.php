@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Invoice;
+use Illuminate\Support\Facades\Log;
 
 class PublicController extends Controller
 {
@@ -27,5 +28,11 @@ class PublicController extends Controller
             'status' => $invoice->status,
             'txs' => ($invoice->status==1)?$txs:[]
         ], 200);
+    }
+    
+    //
+    public function webhookTest(Request $request) {
+        Log::info('Request data recieved: ', [$request->all()]);
+        return response()->json([], 200);
     }
 }

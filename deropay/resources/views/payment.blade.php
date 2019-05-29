@@ -68,13 +68,13 @@
     
     @if( $invoice->status == 1 )
     <div class="alert alert-warning mb-4" role="alert">
-        A simple warning alert—check it out!
+        If you are sending funds from exchange, please make sure that final ammount is equal or more then invoice ammount !
     </div>
     @endif
     
     @if( $invoice->status == 2 )
     <div class="alert alert-danger mb-4" role="alert">
-        A simple warning alert—check it out!
+        This invoice is now outdated, if you believe that your payment went through, please contact store owner !
     </div>
     @endif
     
@@ -106,7 +106,7 @@
       </div>
       <div class="col">
         <div class="input-group">
-          <input type="text" class="form-control" placeholder="Invoice Amount" aria-label="Invoice Amount" aria-describedby="button-addon2" readonly value="{{ sprintf('%0.2f', ($invoice->price / 1000000000000)) }}">
+          <input type="text" class="form-control" placeholder="Invoice Amount" aria-label="Invoice Amount" aria-describedby="button-addon2" readonly value="{{ (($invoice->price / 1000000000000)) }}">
           <div class="input-group-append">
             <button class="btn btn-outline-primary clipboard-copy" type="button" id="button-addon2" data-toggle="tooltip" title="Copied !" data-trigger="focus" data-placement="left">Copy</button>
           </div>

@@ -121,10 +121,12 @@ class ResoluteInvoices extends Command
         
         
         // Calculate all txs for open invoices and close them
-        foreach( $original_invoices as $invoice){
+        foreach( $original_invoices as $k=>$invoice){
             if( count($invoice->txs) > 0 ){
                 $invoice_tx_sum = 0;
                 foreach($invoice->txs as $tx){
+                    if(($tx->wallet_height - $tx->height) < config('deropay.confirmations'))
+                        unset($original_invoices[$k]); // If there is txs, exclude from outdating schedule.
                     if(($tx->wallet_height - $tx->height) >= config('deropay.confirmations'))
                         $invoice_tx_sum += (int)$tx->amount;
                 }

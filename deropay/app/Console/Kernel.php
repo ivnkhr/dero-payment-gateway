@@ -25,6 +25,7 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         $schedule->command('invoice:resolute')->everyMinute();
+        $schedule->call('App\Http\Controllers\WalletController@withdraw')->hourly();
     }
 
     /**

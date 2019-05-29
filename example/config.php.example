@@ -1,0 +1,6 @@
+<?php
+
+	$api_endpoint = 'http://127.0.0.1/'; //payment processor url if served localy
+	$api_secret = '<YOUR_SECRET>'; //api secret
+	
+?>

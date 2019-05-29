@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <title>DeroPay Example - Tip Dev</title>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <style>
+	.load{
+	display: none;
+	}
+	.hl10{
+	color: orange;
+	font-size: 17px;
+	}
+	.hl25{
+	color: blue;
+	font-size: 19px;
+	}
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+	<script>
+	$(document).ready(function(){
+		//sups
+		var jqxhr = $.ajax( '/supporters.php', function(result) {
+
+		})
+		.done(function(result) {
+			//alert( "success" );
+			console.log(result);
+			var html = '';
+			for(i=0;i<result.length;i++){
+			
+			classc = '';
+			if(result[i][1]>=10) classc = 'hl10';
+			if(result[i][1]>=25) classc = 'hl25';
+			
+			html += '<b class="'+classc+'">';
+				html += result[i][0];
+				html += ' - ';
+				html +=  result[i][1] + ' DERO';
+				html += '</b><br/>';
+			}
+			$('.sups').html(html);
+		});
+			
+		$('.cc3').click(function(){
+		$('.load').show();
+		$('.card-deck').hide();
+			nick = prompt('Enter your nickname (will be displayed in supporters list)');
+			if($(this).data('pay')){
+				endpoint = '/create_invoice.php?val='+$(this).data('pay');
+			}else{
+				endpoint = '/create_invoice.php?val='+$('.form-control').val();
+			}
+			endpoint += '&nick='+nick;
+			var jqxhr = $.ajax( endpoint, function(result) {
+
+			})
+			.done(function(result) {
+				//alert( "success" );
+				console.log(result);
+				window.location.href=result;
+			})
+			.fail(function() {
+				alert( "Unable to create invoice !" );
+			})
+			.always(function() {
+				//alert( "finished" );
+				$('.load').hide();
+				$('.card-deck').show();
+			});
+		});
+	});	
+	</script>
+	
+  </head>
+  <body>
+    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+  <h5 class="my-0 mr-md-auto font-weight-normal">Coffee for the Dev</h5>
+
+  <a class="btn btn-outline-primary" href="https://github.com/plrspro/dero-payment-gateway">Github</a>
+</div>
+
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+  <h1 class="display-4">Developer Support Packages</h1>
+  <div class="load">
+	<div class="spinner-border" role="status">
+  <span class="sr-only">Loading...</span>
+</div>
+</div>
+</div>
+
+<div class="container">
+  <div class="card-deck mb-0 text-center">
+    <div class="card mb-4 shadow-sm">
+      <div class="card-header">
+        <h4 class="my-0 font-weight-normal">Coffee Cup</h4>
+      </div>
+      <div class="card-body">
+        <h1 class="card-title pricing-card-title">5 <small class="text-muted">DERO</small></h1>
+        <ul class="list-unstyled mt-3 mb-4">
+          <li>Ultimate dev joy</li>
+		  <li>Mention on supporters list</li>
+		  <li>...</li>
+		  <li>...</li>
+        </ul>
+        <button type="button" class="btn btn-lg btn-block btn-primary cc3" data-pay="5">Pay via DeroPay Gateway</button>
+      </div>
+    </div>
+    <div class="card mb-4 shadow-sm">
+      <div class="card-header">
+        <h4 class="my-0 font-weight-normal">Personal Supporter</h4>
+      </div>
+      <div class="card-body">
+        <h1 class="card-title pricing-card-title">10 <small class="text-muted">DERO</small></h1>
+        <ul class="list-unstyled mt-3 mb-4">
+          <li>Shoutout on twitter</li>
+          <li><b style="color: orange;">Golden</b> frame in supporters list</li>
+		  <li>...</li>
+          <li>+ all from <b>Coffee Cup</b></li>
+		</ul>
+        <button type="button" class="btn btn-lg btn-block btn-primary cc3" data-pay="10">Pay via DeroPay Gateway</button>
+      </div>
+    </div>
+    <div class="card mb-4 shadow-sm">
+      <div class="card-header">
+        <h4 class="my-0 font-weight-normal">Patron</h4>
+      </div>
+      <div class="card-body">
+        <h1 class="card-title pricing-card-title">25 <small class="text-muted">DERO or more</small></h1>
+        <ul class="list-unstyled mt-3 mb-4">
+          <li>Mention on github page as supporter</li>
+          <li><b style="color: blue;">Platinum</b> frame in supporters list</li>
+          <li>...</li>
+          <li>+ all from <b>Personal Supporter</b></li>
+        </ul>
+		<div class="row">
+		<div class="col">
+		<input type="number" class="form-control form-control-lg" placeholder="25" value="25" min="25">
+		</div>
+		<div class="col-4">
+        <button type="button" class="btn btn-lg btn-block btn-primary cc3">Pay</button>
+		</div>
+		</div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="pt-0 my-md-5 pt-md-5 border-top">
+    <div class="row">
+      <div class="col-12 col-md">
+        <img class="mb-2" src="/docs/4.3/assets/brand/bootstrap-solid.svg" alt="" width="24" height="24">
+        <small class="d-block mb-3 text-muted">&copy; 2017-2019</small>
+      </div>
+      <div class="col-6 col-md">
+        <h5>Project Supporters</h5>
+		<div class="sups">loading...</div>
+		
+    </div>
+  </footer>
+</div>
+</body>
+</html>
