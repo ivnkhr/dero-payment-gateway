@@ -1,6 +1,8 @@
 # DeroPay
 ### Dero Payment Gateway a.k.a DeroPay
 
+This is community driven project so donations are highly appreciated: dERodvQrEpaHgZQSSB6LKdMdLA7kZVpvXGZmVE62Efcpbp9HerMmhUNLWZGxs9W4xtUNHr9iwM9cuHiqzjCrxN8W35ZsThuANs
+
 This project consists of 3 major parts:
 1. Payment Gateway Backend (issuing invoices, verifying payments)
 2. User Interface (paying invoice, tracking down payment)
