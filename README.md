@@ -7,7 +7,9 @@ This is community driven project so donations are highly appreciated: **dERodvQr
 Or use demo implementation here and donate via website: https://deropay.plrs.pro/
 
 **Project Supporters:**
-will be here soon...
+
+Gordon - 25 DERO
+
 
 Features:
 1. Invoice issuing
