@@ -9,7 +9,7 @@ Or use demo implementation here and donate via website: https://deropay.plrs.pro
 **Project Supporters:**
 
 ❤️ **Gordon** - 50 DERO
-
+❤️ **Bradley** - 50 DERO
 
 
 Features:
